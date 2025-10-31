@@ -1,0 +1,22 @@
+*** SPICE deck for cell or2{sch} from library bai_2
+*** Created on Fri Oct 31, 2025 14:55:04
+*** Last revised on Fri Oct 31, 2025 15:11:01
+*** Written on Fri Oct 31, 2025 15:12:15 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: or2{sch}
+CC1 gnd Y 1n
+MM0 vdd A net@9 vdd PMOS L=0.6U W=1.2U
+MM1 net@9 B net@22 net@9 PMOS L=0.6U W=1.2U
+MM2 net@22 A gnd gnd NMOS L=0.6U W=0.6U
+MM3 net@22 B gnd gnd NMOS L=0.6U W=0.6U
+MM4 vdd net@22 Y vdd PMOS L=0.6U W=1.2U
+MM5 Y net@22 M5_s gnd NMOS L=0.6U W=0.6U
+
+* Spice Code nodes in cell cell 'or2{sch}'
+.op
+.include "E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\C5_models.txt"
+.END

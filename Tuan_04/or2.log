@@ -1,0 +1,86 @@
+Circuit: *** SPICE deck for cell or2{sch} from library bai_2
+
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+WARNING: Node A is floating.
+WARNING: Node B is floating.
+
+WARNING: Less than two connections to node M5_S.  This node is used by MM5.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+.OP point found by inspection.
+Semiconductor Device Operating Points:
+                        --- BSIM3 MOSFETS ---
+Name:        mm5         mm3         mm2         mm4         mm1
+Model:      nmos        nmos        nmos        pmos        pmos
+Id:        0.00e+00    0.00e+00    0.00e+00   -0.00e+00   -0.00e+00
+Vgs:       0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Vds:       0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Vbs:       0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Vth:       3.98e+00    3.98e+00    3.98e+00   -9.81e-01   -9.81e-01
+Vdsat:     3.54e-02    3.54e-02    3.54e-02   -4.21e-02   -4.21e-02
+Gm:        0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Gds:       1.86e-53    1.86e-53    1.86e-53    2.26e-17    2.26e-17
+Gmb        0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cbd:       0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cbs:       0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cgsov:     2.11e-17    2.11e-17    2.11e-17    1.83e-16    1.83e-16
+Cgdov:     2.11e-17    2.11e-17    2.11e-17    1.83e-16    1.83e-16
+Cgbov:     5.28e-16    5.28e-16    5.28e-16    4.89e-16    4.89e-16
+dQgdVgb:   7.09e-16    7.09e-16    7.09e-16    1.19e-15    1.19e-15
+dQgdVdb:  -2.11e-17   -2.11e-17   -2.11e-17   -1.83e-16   -1.83e-16
+dQgdVsb:  -2.12e-17   -2.12e-17   -2.12e-17   -1.83e-16   -1.83e-16
+dQddVgb:  -2.11e-17   -2.11e-17   -2.11e-17   -1.83e-16   -1.83e-16
+dQddVdb:   2.11e-17    2.11e-17    2.11e-17    1.83e-16    1.83e-16
+dQddVsb:  -1.23e-31   -1.23e-31   -1.23e-31    1.95e-27    1.95e-27
+dQbdVgb:  -6.66e-16   -6.66e-16   -6.66e-16   -8.22e-16   -8.22e-16
+dQbdVdb:  -1.11e-31   -1.11e-31   -1.11e-31   -3.03e-27   -3.03e-27
+dQbdVsb:   4.61e-20    4.61e-20    4.61e-20    1.11e-20    1.11e-20
+
+Name:        mm0
+Model:      pmos
+Id:       -0.00e+00
+Vgs:       0.00e+00
+Vds:       0.00e+00
+Vbs:       0.00e+00
+Vth:      -9.81e-01
+Vdsat:    -4.21e-02
+Gm:        0.00e+00
+Gds:       2.26e-17
+Gmb        0.00e+00
+Cbd:       0.00e+00
+Cbs:       0.00e+00
+Cgsov:     1.83e-16
+Cgdov:     1.83e-16
+Cgbov:     4.89e-16
+dQgdVgb:   1.19e-15
+dQgdVdb:  -1.83e-16
+dQgdVsb:  -1.83e-16
+dQddVgb:  -1.83e-16
+dQddVdb:   1.83e-16
+dQddVsb:   1.95e-27
+dQbdVgb:  -8.22e-16
+dQbdVdb:  -3.03e-27
+dQbdVsb:   1.11e-20
+
+
+
+Date: Fri Oct 31 15:12:16 2025
+Total elapsed time: 0.040 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 0
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 7
+fillins = 0
+solver = Normal
+

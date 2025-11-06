@@ -1,0 +1,21 @@
+*** SPICE deck for cell current_mirror{sch} from library bai_3
+*** Created on Thu Nov 06, 2025 14:14:51
+*** Last revised on Thu Nov 06, 2025 22:40:21
+*** Written on Thu Nov 06, 2025 22:40:35 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd
+
+*** TOP LEVEL CELL: current_mirror{sch}
+MM1 M1_d net@23 gnd gnd NMOS L=0.6U W=0.6U
+MM2 net@34 net@23 gnd gnd NMOS L=0.6U W=3.9U
+RR1 net@23 net@13 10k
+RR2 net@34 net@13 1k
+VV1 net@13 gnd DC 2.5
+
+* Spice Code nodes in cell cell 'current_mirror{sch}'
+.include "E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\C5_models.txt"
+.op
+;dc VV1 0 5 0.1
+.END

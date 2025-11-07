@@ -2,8 +2,6 @@
 
 Iref = 100uA  
 
-Iout = 500uA 
+Iout = 500uA (sai số cho phép 10%)
 
 V1_max = 5V 
-
-![Schematic current mirror](Tuan_05/current_mirror.jpg)

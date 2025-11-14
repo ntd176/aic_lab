@@ -1,0 +1,34 @@
+*** SPICE deck for cell XOR_AOI{sch} from library bai_4
+*** Created on Thu Nov 06, 2025 14:14:51
+*** Last revised on Thu Nov 13, 2025 22:19:33
+*** Written on Thu Nov 13, 2025 22:19:44 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: XOR_AOI{sch}
+CC_LOAD gnd Y 1n
+MM1 vdd A A_ vdd PMOS L=0.6U W=15U
+MM2 A_ A gnd gnd NMOS L=0.6U W=7.5U
+MM3 vdd B B_ vdd PMOS L=0.6U W=15U
+MM4 B_ B gnd gnd NMOS L=0.6U W=7.5U
+MM5 vdd A_ net@220 vdd PMOS L=0.6U W=30U
+MM6 vdd B_ net@220 vdd PMOS L=0.6U W=30U
+MM7 net@220 B Y vdd PMOS L=0.6U W=30U
+MM8 net@220 A Y vdd PMOS L=0.6U W=30U
+MM9 Y A net@231 gnd NMOS L=0.6U W=15U
+MM10 Y A_ net@231 gnd NMOS L=0.6U W=15U
+MM11 net@231 B gnd gnd NMOS L=0.6U W=15U
+MM12 net@231 B_ gnd gnd NMOS L=0.6U W=15U
+VV1 vdd gnd DC 5V
+VV2 A V2_minus DC=5V AC=1V SIN (5V 1V 800MEG 1ns)
+VV3 B gnd DC=0V AC=1V SIN (0V 1V 800MEG 1ns)
+
+* Spice Code nodes in cell cell 'XOR_AOI{sch}'
+.include "E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\C5_models.txt"
+;tran 0 10m
+.ac dec 1000 1k 1Meg
+.probe v(Y)
+;meas ac fcut when v(Y)=1/sqrt(2)
+.END

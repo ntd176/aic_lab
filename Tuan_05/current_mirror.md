@@ -1,4 +1,4 @@
-# Thiết kế và mô phỏng mạch gương dòng sử dụng công nghệ C5:  
+# Thiết kế và mô phỏng mạch gương dòng sử dụng công nghệ C5 
 
 Iref = 100uA  
 

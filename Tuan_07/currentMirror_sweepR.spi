@@ -1,0 +1,22 @@
+*** SPICE deck for cell currentMirror_sweepR{sch} from library bai_5
+*** Created on Fri Nov 14, 2025 15:57:35
+*** Last revised on Fri Nov 14, 2025 15:58:07
+*** Written on Fri Nov 14, 2025 15:58:13 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd
+
+*** TOP LEVEL CELL: currentMirror_sweepR{sch}
+MM1 M1_d net@8 gnd gnd nch L=0.2U W=0.4U
+MM2 net@15 net@8 gnd gnd nch L=0.2U W=2U
+RR1 net@8 net@0 10k
+RR2 net@15 net@0 3k1
+VV1 net@0 gnd DC 1.8
+
+* Spice Code nodes in cell cell 'currentMirror_sweepR{sch}'
+.lib 'E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\tsmc180nm\mm018.l' TT 
+.op
+.step param R1 1k 50k 100
+.probe i()
+.END

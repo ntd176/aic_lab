@@ -1,0 +1,72 @@
+Circuit: *** SPICE deck for cell currentMirror_SS{sch} from library bai_5
+
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter LDIF
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Ignoring BSIM parameter TLEVC
+Ignoring BSIM parameter CALCACM
+Ignoring BSIM parameter SFVTFLAGl
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter LDIF
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Ignoring BSIM parameter TLEVC
+Ignoring BSIM parameter CALCACM
+Ignoring BSIM parameter SFVTFLAGl
+WARNING: Less than two connections to node M1_D.  This node is used by MM1.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- BSIM3 MOSFETS ---
+Name:        mm2         mm1
+Model:      nch.6      nch.12
+Id:        4.73e-04    0.00e+00
+Vgs:       1.70e+00    1.70e+00
+Vds:       2.35e-01    2.88e-17
+Vbs:       0.00e+00    0.00e+00
+Vth:       6.18e-01    6.05e-01
+Vdsat:     4.92e-01    4.91e-01
+Gm:        3.15e-04    0.00e+00
+Gds:       1.41e-03    5.90e-04
+Gmb        1.30e-04    0.00e+00
+Cbd:       0.00e+00    0.00e+00
+Cbs:       0.00e+00    0.00e+00
+Cgsov:     6.89e-16    1.32e-16
+Cgdov:     6.89e-16    1.32e-16
+Cgbov:     3.44e-17    3.44e-17
+dQgdVgb:   4.54e-15    9.11e-16
+dQgdVdb:  -1.87e-15   -4.35e-16
+dQgdVsb:  -2.52e-15   -4.19e-16
+dQddVgb:  -2.09e-15   -4.38e-16
+dQddVdb:   4.06e-15    9.31e-16
+dQddVsb:  -1.65e-15   -4.08e-16
+dQbdVgb:  -1.00e-16   -3.54e-17
+dQbdVdb:  -1.06e-15   -2.29e-16
+dQbdVsb:   1.82e-16    3.77e-17
+
+
+
+Date: Fri Nov 14 16:01:21 2025
+Total elapsed time: 3.333 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 11
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 5
+fillins = 0
+solver = Normal
+Matrix Compiler1: 168 bytes object code size
+Matrix Compiler2: 355 bytes object code size

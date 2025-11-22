@@ -1,0 +1,21 @@
+*** SPICE deck for cell inv{sch} from library bai_4
+*** Created on Thu Oct 23, 2025 20:23:55
+*** Last revised on Wed Nov 12, 2025 14:10:10
+*** Written on Fri Nov 14, 2025 20:58:50 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: inv{sch}
+Mnmos-4@0 output input gnd gnd NMOS L=0.6U W=0.6U
+Mpmos-4@0 vdd input output vdd PMOS L=0.6U W=1.2U
+VACVoltag@0 input gnd DC=1V AC=1V SIN (1V 1V 800MEG 1ns)
+VV0 vdd gnd DC 5V
+
+* Spice Code nodes in cell cell 'inv{sch}'
+.include "E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\C5_models.txt"
+.probe v(output)
+.ac dec 1000 1G 1T
+.meas ac fcut when v(output)=1/sqrt(2)
+.END

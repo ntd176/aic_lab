@@ -1,0 +1,21 @@
+*** SPICE deck for cell currentMirror_noiseSS{sch} from library bai_5
+*** Created on Fri Nov 14, 2025 16:52:36
+*** Last revised on Fri Nov 14, 2025 20:46:52
+*** Written on Fri Nov 14, 2025 20:52:03 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd
+
+*** TOP LEVEL CELL: currentMirror_noiseSS{sch}
+MM1 net@8 net@8 gnd gnd nch L=0.2U W=0.4U
+MM2 out net@8 gnd gnd nch L=0.2U W=2U
+RR1 net@8 net@2 10k
+RR2 out net@2 3k1
+VV1 net@2 gnd DC=1.8V AC=1V SIN (1.8V 1V 800MEG 1ns)
+
+* Spice Code nodes in cell cell 'currentMirror_noiseSS{sch}'
+.lib 'E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\tsmc180nm\mm018.l' SS 
+.noise v(out)  VV1 dec 1000 100Meg 100G
+.probe v(onoise)
+.END

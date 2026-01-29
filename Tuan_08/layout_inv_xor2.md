@@ -1,0 +1,1 @@
+# Thiết kế bố trí (layout) mạch inverter và XOR 2 ngõ vào sử dụng 12 transistor (cấu trúc AOI)

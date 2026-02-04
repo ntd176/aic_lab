@@ -1,0 +1,1 @@
+# LVS mạch inverter và gương dòng. Trích xuất kí sinh và kết quả Post Layout Simulation

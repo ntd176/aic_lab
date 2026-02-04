@@ -1,0 +1,82 @@
+=================================266=================================
+Running DRC with area bit on, extension bit on, Mosis bit
+Checking again hierarchy .... (0.0 secs)
+Found 4 networks
+Checking cell 'current_mirror{lay}'
+	No errors/warnings found
+0 errors and 0 warnings found (took 0.02 secs)
+=================================267=================================
+Checking Wells and Substrates in 'bai_7:current_mirror{lay}' ...
+   Geometry collection found 9 well pieces, took 0.0 secs
+   Geometry analysis used 8 threads and took 0.0 secs
+NetValues propagation took 0.0 secs
+Checking short circuits in 1 well contacts
+   Additional analysis took 0.0 secs
+No Well errors found (took 0.0 secs)
+=================================268=================================
+Hierarchical NCC every cell in the design: cell 'current_mirror{sch}'  cell 'current_mirror{lay}'
+Comparing: bai_7:current_mirror{sch} with: bai_7:current_mirror{lay}
+********************************************************************************
+  NCC net list construction took 0.0 seconds.
+  Export name matching took: 0.0 seconds
+--- NCC starting merge process with 4 Parts
+  parallel and series merge trip 1
+    Parallel merged 0 Parts
+    Serial merged 0 Transistors
+--- NCC finishing merge process with 4 Parts
+
+  Serial/parallel merge took: 0.0 seconds
+  Cell: bai_7:current_mirror{sch} has 3 wires, 2 parts, and 1 ports after series/parallel combination. Instance path: 
+  Cell: bai_7:current_mirror{lay} has 3 wires, 2 parts, and 1 ports after series/parallel combination. Instance path: 
+Begin partitioning based on local characteristics 
+
+Partition Parts using local information
+StratPartType produced 0 offspring
+part has 2 different Wires attached
+part has 3 different Wires attached
+StratPartPopularity produced 2 offspring
+ offspring max sizes: 1 1
+  offspring counts: #matched=2 #mismatched=0 #active=0
+Partition Wires using local information
+StratLocalPartitionWires produced 3 offspring
+ offspring max sizes: 1 1 1
+  offspring counts: #matched=3 #mismatched=0 #active=0
+End partitioning based on local characteristics 
+0 StratHashParts doing  Parts
+ processed 4 Parts from 2 leaf Records
+  offspring counts: #matched=0 #mismatched=0 #active=0
+ offspring max sizes:
+ took 0 miliseconds
+
+1 StratHashWires doing  Wires
+ processed 6 Wires from 3 leaf records
+  offspring counts: #matched=0 #mismatched=0 #active=0
+ offspring max sizes:
+ took 0 miliseconds
+
+  Local partitioning took 0.0 seconds
+----- starting HashCodePartitioningNew
+----- hash all Parts
+----- done HashCodePartitioningNew
+  Export checking took 0.0 seconds
+  Size checking took 0.0 seconds
+=========== Printing Matched Parts:
+----- Starting Print Strategy
+**  Depth= 0 Matched leaf Record randCode=-217209407 value=1002 maxSize=1
+**  Depth= 1 Circuit code=-217209407 size=1
+nmos_withBody M1 in Cell: bai_7:current_mirror{sch} W=10.0 L=2.0 S=GND G=Iref D=Iref B=GND
+**  Depth= 1 Circuit code=-217209407 size=1
+nmos_withBody M1 in Cell: bai_7:current_mirror{lay} W=10.0 L=2.0 S=GND G=net@1 D=net@1 B=GND
+----- Ending Print Strategy
+----- Starting Print Strategy
+**  Depth= 0 Matched leaf Record randCode=-77517647 value=1003 maxSize=1
+**  Depth= 1 Circuit code=-77517647 size=1
+nmos_withBody M2 in Cell: bai_7:current_mirror{sch} W=50.0 L=2.0 S=GND G=Iref D=Iout B=GND
+**  Depth= 1 Circuit code=-77517647 size=1
+nmos_withBody M2 in Cell: bai_7:current_mirror{lay} W=50.0 L=2.0 S=Iout G=net@1 D=GND B=GND
+----- Ending Print Strategy
+=========== Done Printing
+********************************************************************************
+  exports match, topologies match, sizes match in 0.0 seconds.
+Summary for all cells: exports match, topologies match, sizes match
+NCC command completed in: 0.0 seconds.

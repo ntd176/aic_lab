@@ -1,0 +1,100 @@
+*** SPICE deck for cell TestBench_ESD_lay{lay} from library bai_8
+*** Created on Sun Dec 21, 2025 21:37:48
+*** Last revised on Mon Feb 16, 2026 20:53:37
+*** Written on Mon Feb 16, 2026 20:53:43 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+***    P-Active:	areacap=0.9FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    N-Active:	areacap=0.9FF/um^2,	edgecap=0.0FF/um,	res=3.0ohms/sq
+***    Polysilicon-1:	areacap=0.1467FF/um^2,	edgecap=0.0608FF/um,	res=6.2ohms/sq
+***    Polysilicon-2:	areacap=1.0FF/um^2,	edgecap=0.0FF/um,	res=50.0ohms/sq
+***    Transistor-Poly:	areacap=0.09FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Poly-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=2.2ohms/sq
+***    Active-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Metal-1:	areacap=0.1209FF/um^2,	edgecap=0.1104FF/um,	res=0.078ohms/sq
+***    Via1:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+***    Metal-2:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via2:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.9ohms/sq
+***    Metal-3:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via3:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-4:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via4:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-5:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via5:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-6:	areacap=0.0423FF/um^2,	edgecap=0.1273FF/um,	res=0.036ohms/sq
+***    Hi-Res:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+
+*** SUBCIRCUIT bai_8__ESD_HBM FROM CELL ESD_HBM{Lay}
+.SUBCKT bai_8__ESD_HBM ESD gnd
+** GLOBAL gnd
+CESD_C1 gnd esd_c1 0.15n
+CESD_C2 gnd esd_c2 8p
+LESD_L1 esd_r1 ESD 2.4u
+LESD_L2 esd_r2 ESD 0.14u
+RESD_R1 esd_r1 esd_c1 330
+RESD_R2 esd_r2 esd_c2 200
+RESD_R3 ESD gnd 390
+* Spice Code nodes in cell cell 'ESD_HBM{sch}'
+.param vnom = 2*2000
+.ic v(esd_c1) = vnom
+.ic v(esd_c2) = vnom
+.ENDS bai_8__ESD_HBM
+
+*** SUBCIRCUIT bai_8__IO_PAD FROM CELL IO_PAD{lay}
+.SUBCKT bai_8__IO_PAD gnd IOA vdd
+MQ0 IOA vdd vdd vdd PMOS L=0.6U W=2.4U AS=3.465P AD=172.08P PS=7.5U PD=237.174U
+MQ1 IOA gnd gnd gnd NMOS L=0.6U W=1.2U AS=3.465P AD=93.51P PS=7.5U PD=151.392U
+** Extracted Parasitic Capacitors ***
+C0 IOA 0 4.775fF
+** Extracted Parasitic Resistors ***
+.ENDS bai_8__IO_PAD
+
+*** SUBCIRCUIT bai_8__inv FROM CELL inv{lay}
+.SUBCKT bai_8__inv A B gnd vdd
+MQ0 B A vdd vdd PMOS L=0.6U W=2.4U AS=166.68P AD=3.465P PS=229.98U PD=7.5U
+MQ1 B A gnd gnd NMOS L=0.6U W=1.2U AS=89.01P AD=3.465P PS=144.202U PD=7.5U
+** Extracted Parasitic Capacitors ***
+C0 B 0 2.744fF
+C1 A 0 0.132fF
+C2 A#1pin@0_polysilicon-1 0 0.31fF
+** Extracted Parasitic Resistors ***
+R0 A#0Q1_poly-right A#0Q1_poly-right##0 6.975
+R1 A#0Q1_poly-right##0 A#1pin@0_polysilicon-1 6.975
+R2 A#1pin@0_polysilicon-1 A#1pin@0_polysilicon-1##0 6.2
+R3 A#1pin@0_polysilicon-1##0 A#2Q0_poly-left 6.2
+R4 A#1pin@0_polysilicon-1 A#1pin@0_polysilicon-1##0 8.138
+C3 A#1pin@0_polysilicon-1##0 0 0.132fF
+R5 A#1pin@0_polysilicon-1##0 A#1pin@0_polysilicon-1##1 8.138
+C4 A#1pin@0_polysilicon-1##1 0 0.132fF
+R6 A#1pin@0_polysilicon-1##1 A#1pin@0_polysilicon-1##2 8.138
+C5 A#1pin@0_polysilicon-1##2 0 0.132fF
+R7 A#1pin@0_polysilicon-1##2 A 8.138
+.ENDS bai_8__inv
+
+*** SUBCIRCUIT bai_8__TopChip FROM CELL TopChip{lay}
+.SUBCKT bai_8__TopChip gnd IN OUT vdd
+** GLOBAL gnd
+** GLOBAL vdd
+XIO_PAD@0 gnd IN vdd bai_8__IO_PAD
+XIO_PAD@1 gnd OUT vdd bai_8__IO_PAD
+Xinv@0 IN OUT gnd vdd bai_8__inv
+.ENDS bai_8__TopChip
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: TestBench_ESD_lay{lay}
+XESD_HBM@0 IN gnd bai_8__ESD_HBM
+XTopChip@0 gnd IN OUT vdd bai_8__TopChip
+** Extracted Parasitic Capacitors ***
+C0 IN 0 2.797fF
+C1 IN#0IO_PAD@4_IOB 0 6.082fF
+C2 OUT#0inv@2_B 0 6.082fF
+C3 OUT 0 2.841fF
+** Extracted Parasitic Resistors ***
+
+* Spice Code nodes in cell cell 'TestBench_ESD_lay{lay}'
+.include "E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\C5_models.txt"
+.trans 0 20ms 1ns
+VVVD VDD GND 5V
+CCL GND OUT 1u
+.END

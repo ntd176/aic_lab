@@ -1,0 +1,61 @@
+*** SPICE deck for cell TestBench_ESD_cir{sch} from library bai_8
+*** Created on Sun Dec 21, 2025 21:28:05
+*** Last revised on Mon Feb 16, 2026 20:48:45
+*** Written on Mon Feb 16, 2026 20:49:31 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT bai_8__ESD_HBM FROM CELL ESD_HBM{sch}
+.SUBCKT bai_8__ESD_HBM ESD gnd
+** GLOBAL gnd
+CESD_C1 gnd esd_c1 0.15n
+CESD_C2 gnd esd_c2 8p
+LESD_L1 esd_r1 ESD 2.4u
+LESD_L2 esd_r2 ESD 0.14u
+RESD_R1 esd_r1 esd_c1 330
+RESD_R2 esd_r2 esd_c2 200
+RESD_R3 ESD gnd 390
+
+* Spice Code nodes in cell cell 'ESD_HBM{sch}'
+.param vnom = 2*2000
+.ic v(esd_c1) = vnom
+.ic v(esd_c2) = vnom
+.ENDS bai_8__ESD_HBM
+
+*** SUBCIRCUIT bai_8__IO_PAD FROM CELL IO_PAD{sch}
+.SUBCKT bai_8__IO_PAD gnd IOA vdd
+** GLOBAL gnd
+** GLOBAL vdd
+MQ0 IOA vdd vdd vdd PMOS L=0.6U W=2.4U
+MQ1 IOA gnd gnd gnd NMOS L=0.6U W=1.2U
+.ENDS bai_8__IO_PAD
+
+*** SUBCIRCUIT bai_8__inv FROM CELL inv{sch}
+.SUBCKT bai_8__inv A B gnd vdd
+** GLOBAL gnd
+** GLOBAL vdd
+MQ0 B A vdd vdd PMOS L=0.6U W=2.4U
+MQ1 B A gnd gnd NMOS L=0.6U W=1.2U
+.ENDS bai_8__inv
+
+*** SUBCIRCUIT bai_8__TopChip FROM CELL TopChip{sch}
+.SUBCKT bai_8__TopChip gnd IN OUT vdd
+** GLOBAL gnd
+** GLOBAL vdd
+XIO_PAD@0 gnd IN vdd bai_8__IO_PAD
+XIO_PAD@1 gnd OUT vdd bai_8__IO_PAD
+Xinv@0 IN OUT gnd vdd bai_8__inv
+.ENDS bai_8__TopChip
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: TestBench_ESD_cir{sch}
+XESD_HBM@0 IN gnd bai_8__ESD_HBM
+XTopChip@0 gnd IN OUT vdd bai_8__TopChip
+
+* Spice Code nodes in cell cell 'TestBench_ESD_cir{sch}'
+.include "E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\C5_models.txt"
+.trans 0 20ms 1ns
+VVVD VDD GND 5V
+CCL GND OUT 1u
+.END

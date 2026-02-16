@@ -1,0 +1,213 @@
+=================================9=================================
+Running DRC with area bit on, extension bit on, Mosis bit
+Checking again hierarchy .... (0.0 secs)
+Found 5 networks
+0 errors and 0 warnings found (took 0.009 secs)
+=================================10=================================
+Checking Wells and Substrates in 'bai_8:TopChip{lay}' ...
+   Geometry collection found 51 well pieces, took 0.009 secs
+   Geometry analysis used 8 threads and took 0.0 secs
+NetValues propagation took 0.0 secs
+Checking short circuits in 27 well contacts
+   Additional analysis took 0.0 secs
+No Well errors found (took 0.009 secs)
+=================================11=================================
+Hierarchical NCC every cell in the design: cell 'TopChip{sch}'  cell 'TopChip{lay}'
+Comparing: bai_8:IO_PAD{sch} with: bai_8:IO_PAD{lay}
+********************************************************************************
+  NCC net list construction took 0.0 seconds.
+  Export name matching took: 0.0 seconds
+--- NCC starting merge process with 4 Parts
+  parallel and series merge trip 1
+    Parallel merged 0 Parts
+    Serial merged 0 Transistors
+--- NCC finishing merge process with 4 Parts
+
+  Serial/parallel merge took: 0.0 seconds
+  Cell: bai_8:IO_PAD{sch} has 3 wires, 2 parts, and 3 ports after series/parallel combination. Instance path: IO_PAD@0
+  Cell: bai_8:IO_PAD{lay} has 3 wires, 2 parts, and 3 ports after series/parallel combination. Instance path: IO_PAD@4
+Begin partitioning based on local characteristics 
+
+Partition Parts using local information
+part type is nmos_withBody
+part type is pmos_withBody
+StratPartType produced 2 offspring
+ offspring max sizes: 1 1
+  offspring counts: #matched=2 #mismatched=0 #active=0
+StratPartPopularity produced 0 offspring
+Partition Wires using local information
+StratLocalPartitionWires produced 3 offspring
+ offspring max sizes: 1 1 1
+  offspring counts: #matched=3 #mismatched=0 #active=0
+End partitioning based on local characteristics 
+0 StratHashParts doing  Parts
+ processed 4 Parts from 2 leaf Records
+  offspring counts: #matched=0 #mismatched=0 #active=0
+ offspring max sizes:
+ took 0 miliseconds
+
+1 StratHashWires doing  Wires
+ processed 6 Wires from 3 leaf records
+  offspring counts: #matched=0 #mismatched=0 #active=0
+ offspring max sizes:
+ took 0 miliseconds
+
+  Local partitioning took 0.0 seconds
+----- starting HashCodePartitioningNew
+----- hash all Parts
+----- done HashCodePartitioningNew
+  Export checking took 0.0 seconds
+  Size checking took 0.0 seconds
+=========== Printing Matched Parts:
+----- Starting Print Strategy
+**  Depth= 0 Matched leaf Record randCode=-217209407 value=2541 maxSize=1
+**  Depth= 1 Circuit code=-217209407 size=1
+nmos_withBody Q1 in Cell: bai_8:TopChip{sch} / IO_PAD@0 W=4.0 L=2.0 S=GND G=GND D=IOA B=GND
+**  Depth= 1 Circuit code=-217209407 size=1
+nmos_withBody Q1 in Cell: bai_8:TopChip{lay} / IO_PAD@4 W=4.0 L=2.0 S=IOA G=GND D=GND B=GND
+----- Ending Print Strategy
+----- Starting Print Strategy
+**  Depth= 0 Matched leaf Record randCode=-77517647 value=2542 maxSize=1
+**  Depth= 1 Circuit code=-77517647 size=1
+pmos_withBody Q0 in Cell: bai_8:TopChip{sch} / IO_PAD@0 W=8.0 L=2.0 S=VDD G=VDD D=IOA B=VDD
+**  Depth= 1 Circuit code=-77517647 size=1
+pmos_withBody Q0 in Cell: bai_8:TopChip{lay} / IO_PAD@4 W=8.0 L=2.0 S=IOA G=VDD D=VDD B=VDD
+----- Ending Print Strategy
+=========== Done Printing
+********************************************************************************
+  exports match, topologies match, sizes match in 0.0 seconds.
+Comparing: bai_8:inv{sch} with: bai_8:inv{lay}
+********************************************************************************
+  NCC net list construction took 0.0 seconds.
+  Export name matching took: 0.0 seconds
+--- NCC starting merge process with 4 Parts
+  parallel and series merge trip 1
+    Parallel merged 0 Parts
+    Serial merged 0 Transistors
+--- NCC finishing merge process with 4 Parts
+
+  Serial/parallel merge took: 0.0 seconds
+  Cell: bai_8:inv{sch} has 4 wires, 2 parts, and 4 ports after series/parallel combination. Instance path: inv@0
+  Cell: bai_8:inv{lay} has 4 wires, 2 parts, and 4 ports after series/parallel combination. Instance path: inv@2
+Begin partitioning based on local characteristics 
+
+Partition Parts using local information
+part type is nmos_withBody
+part type is pmos_withBody
+StratPartType produced 2 offspring
+ offspring max sizes: 1 1
+  offspring counts: #matched=2 #mismatched=0 #active=0
+StratPartPopularity produced 0 offspring
+Partition Wires using local information
+StratLocalPartitionWires produced 4 offspring
+ offspring max sizes: 1 1 1 1
+  offspring counts: #matched=4 #mismatched=0 #active=0
+End partitioning based on local characteristics 
+0 StratHashParts doing  Parts
+ processed 4 Parts from 2 leaf Records
+  offspring counts: #matched=0 #mismatched=0 #active=0
+ offspring max sizes:
+ took 0 miliseconds
+
+1 StratHashWires doing  Wires
+ processed 8 Wires from 4 leaf records
+  offspring counts: #matched=0 #mismatched=0 #active=0
+ offspring max sizes:
+ took 0 miliseconds
+
+  Local partitioning took 0.0 seconds
+----- starting HashCodePartitioningNew
+----- hash all Parts
+----- done HashCodePartitioningNew
+  Export checking took 0.0 seconds
+  Size checking took 0.0 seconds
+=========== Printing Matched Parts:
+----- Starting Print Strategy
+**  Depth= 0 Matched leaf Record randCode=-217209407 value=2541 maxSize=1
+**  Depth= 1 Circuit code=-217209407 size=1
+nmos_withBody Q1 in Cell: bai_8:TopChip{sch} / inv@0 W=4.0 L=2.0 S=GND G=A D=B B=GND
+**  Depth= 1 Circuit code=-217209407 size=1
+nmos_withBody Q1 in Cell: bai_8:TopChip{lay} / inv@2 W=4.0 L=2.0 S=GND G=A D=B B=GND
+----- Ending Print Strategy
+----- Starting Print Strategy
+**  Depth= 0 Matched leaf Record randCode=-77517647 value=2542 maxSize=1
+**  Depth= 1 Circuit code=-77517647 size=1
+pmos_withBody Q0 in Cell: bai_8:TopChip{sch} / inv@0 W=8.0 L=2.0 S=VDD G=A D=B B=VDD
+**  Depth= 1 Circuit code=-77517647 size=1
+pmos_withBody Q0 in Cell: bai_8:TopChip{lay} / inv@2 W=8.0 L=2.0 S=VDD G=A D=B B=VDD
+----- Ending Print Strategy
+=========== Done Printing
+********************************************************************************
+  exports match, topologies match, sizes match in 0.0 seconds.
+Comparing: bai_8:TopChip{sch} with: bai_8:TopChip{lay}
+********************************************************************************
+  NCC net list construction took 0.0 seconds.
+  Export name matching took: 0.0 seconds
+--- NCC starting merge process with 6 Parts
+  parallel and series merge trip 1
+    Parallel merged 0 Parts
+    Serial merged 0 Transistors
+--- NCC finishing merge process with 6 Parts
+
+  Serial/parallel merge took: 0.0 seconds
+  Cell: bai_8:TopChip{sch} has 4 wires, 3 parts, and 4 ports after series/parallel combination. Instance path: 
+  Cell: bai_8:TopChip{lay} has 4 wires, 3 parts, and 4 ports after series/parallel combination. Instance path: 
+Begin partitioning based on local characteristics 
+
+Partition Parts using local information
+part type is bai_8:IO_PAD
+part type is bai_8:inv
+StratPartType produced 2 offspring
+ offspring max sizes: 2 1
+  offspring counts: #matched=1 #mismatched=0 #active=1
+StratPartPopularity produced 0 offspring
+Partition Wires using local information
+StratLocalPartitionWires produced 4 offspring
+ offspring max sizes: 1 1 1 1
+  offspring counts: #matched=4 #mismatched=0 #active=0
+End partitioning based on local characteristics 
+0 StratHashParts doing  Parts
+ processed 2 Parts from 1 leaf Records
+  offspring counts: #matched=0 #mismatched=0 #active=0
+ offspring max sizes:
+ took 0 miliseconds
+
+1 StratHashWires doing  Wires
+ processed 8 Wires from 4 leaf records
+  offspring counts: #matched=0 #mismatched=0 #active=0
+ offspring max sizes:
+ took 0 miliseconds
+
+  Local partitioning took 0.0 seconds
+----- starting HashCodePartitioningNew
+----- hash all Parts
+----- done HashCodePartitioningNew
+  Export checking took 0.0 seconds
+  Size checking took 0.0 seconds
+=========== Printing Matched Parts:
+----- Starting Print Strategy
+**  Depth= 0 Matched leaf Record randCode=1988031630 value=2084626560 maxSize=1
+**  Depth= 1 Circuit code=1988031630 size=1
+bai_8:IO_PAD IO_PAD@1 in Cell: bai_8:TopChip{sch} / IO_PAD@1 IOA=OUT GND=GND VDD=VDD
+**  Depth= 1 Circuit code=1988031630 size=1
+bai_8:IO_PAD IO_PAD@5 in Cell: bai_8:TopChip{lay} / IO_PAD@5 IOA=OUT GND=GND VDD=VDD
+----- Ending Print Strategy
+----- Starting Print Strategy
+**  Depth= 0 Matched leaf Record randCode=1470946995 value=-2067614785 maxSize=1
+**  Depth= 1 Circuit code=1470946995 size=1
+bai_8:IO_PAD IO_PAD@0 in Cell: bai_8:TopChip{sch} / IO_PAD@0 IOA=IN GND=GND VDD=VDD
+**  Depth= 1 Circuit code=1470946995 size=1
+bai_8:IO_PAD IO_PAD@4 in Cell: bai_8:TopChip{lay} / IO_PAD@4 IOA=IN GND=GND VDD=VDD
+----- Ending Print Strategy
+----- Starting Print Strategy
+**  Depth= 0 Matched leaf Record randCode=-77517647 value=1512 maxSize=1
+**  Depth= 1 Circuit code=-77517647 size=1
+bai_8:inv inv@0 in Cell: bai_8:TopChip{sch} / inv@0 B=OUT A=IN VDD=VDD GND=GND
+**  Depth= 1 Circuit code=-77517647 size=1
+bai_8:inv inv@2 in Cell: bai_8:TopChip{lay} / inv@2 B=OUT A=IN VDD=VDD GND=GND
+----- Ending Print Strategy
+=========== Done Printing
+********************************************************************************
+  exports match, topologies match, sizes match in 0.0 seconds.
+Summary for all cells: exports match, topologies match, sizes match
+NCC command completed in: 0.011 seconds.

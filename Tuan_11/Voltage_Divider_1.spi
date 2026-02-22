@@ -1,0 +1,19 @@
+*** SPICE deck for cell Voltage_Divider_1{sch} from library bai_9
+*** Created on Thu Dec 25, 2025 14:18:05
+*** Last revised on Sun Feb 22, 2026 20:29:26
+*** Written on Sun Feb 22, 2026 20:29:30 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd
+
+*** TOP LEVEL CELL: Voltage_Divider_1{sch}
+RR0 gnd VOUT 300
+RR1 VOUT VIN 1k
+
+* Spice Code nodes in cell cell 'Voltage_Divider_1{sch}'
+.include "E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\C5_models.txt"
+VVIN VIN GND SIN(2.5 2.5 1K)
+.op
+;.trans 0 2ms 1ns 
+.END

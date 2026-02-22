@@ -1,0 +1,144 @@
+# header information:
+Hbai_9|9.08
+
+# Views:
+Vlayout|lay
+Vschematic|sch
+
+# Technologies:
+Tmocmos|Gate InclusionINmocmos()BT|Ground Net InclusionINmocmos()BT|ScaleFORmocmos()D300.0|mocmosAnalog()BT
+
+# Cell Voltage_Divider;1{lay}
+CVoltage_Divider;1{lay}||mocmos|1766933856342|1771767621855||DRC_last_good_drc_area_date()G1771767630617|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1771767630617
+NP-Transistor|Q0|D5G1;|107.5|29.5|||||SIM_spice_model(D5G1;X5;)SPMOS
+NN-Transistor|Q1|D5G1;|42|-9|17|18|R||SIM_spice_model(D5G1;X-1.5;)SNMOS
+NHi-Res-Poly2-Resistor|R0|D5G1;|96|-18.5|20||R||SCHEM_resistance(D5G1;)S300
+NHi-Res-Poly2-Resistor|R1|D5G1;|-9|44|160||||SCHEM_resistance(D5G1;)S1k
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NMetal-1-P-Active-Con|contact@0||107.5|21.5||||
+NMetal-1-P-Active-Con|contact@1||107.5|36.5||||
+NMetal-1-N-Active-Con|contact@2||26.5|-9||15||
+NMetal-1-N-Active-Con|contact@3||57.5|-9||15||
+NMetal-1-Polysilicon-1-Con|contact@4||42|9.5||||
+NMetal-1-Polysilicon-1-Con|contact@5||96|29.5||||
+Ngeneric:Invisible-Pin|pin@0||-32|-22.5|||||SIM_spice_card(D5G1;)S".include \"E:\\Analog_IC_Design\\ThucHanh\\K22_TKVMTT\\Electric_2025\\libs\\models\\C5_models.txt\""
+Ngeneric:Invisible-Pin|pin@4||-45|-24.5|||||SIM_spice_card(D5G1;)SVVIN VIN GND SIN(2.5 2.5 1K) AC=1
+Ngeneric:Invisible-Pin|pin@5||-47|-26.5|||||SIM_spice_card(D5G1;)S.ac  DEC 1000 1MEG 100G
+Ngeneric:Invisible-Pin|pin@6||-46|-28.5|||||SIM_spice_card(D5G1;)S.meas ac tmp max mag(v(VOUT))
+Ngeneric:Invisible-Pin|pin@7||-42.5|-30.5|||||SIM_spice_card(D5G1;)S.meas ac fcut when mag(v(VOUT)) = tmp/sqrt(2)
+NMetal-1-Pin|pin@8||129.5|28||||
+NMetal-1-Pin|pin@9||-134.5|-53.5||||
+NMetal-1-Pin|pin@10||41.5|-53.5||||
+NMetal-1-Pin|pin@12||42|29.5||||
+NMetal-1-Pin|pin@15||41.5|-53.5||||
+NMetal-1-Pin|pin@16||41.5|-53.5||||
+NMetal-1-Pin|pin@17||-127.5|44||||
+NMetal-1-P-Well-Con|substr@0||42|-30.5|35|||
+NMetal-1-N-Well-Con|well@0||120.5|29||15||
+AMetal-1|net@0||1|S1800|well@0||120.5|28|pin@8||129.5|28
+AN-Active|net@1|||S0|Q1|diff-top|29|-9.5|contact@2||26.5|-9.5
+AMetal-1|net@2||1|S0|well@0||120.5|21.5|contact@0||107.5|21.5
+AMetal-1|net@3||1|S0|well@0||120.5|36.5|contact@1||107.5|36.5
+APolysilicon-1|net@4|||S0|Q0|poly-left|104|29.5|contact@5||96.5|29.5
+AMetal-1|net@5||1|S2700|contact@4||42|9.5|pin@12||42|29.5
+AN-Well|net@6|||S1800|Q0|p-trans-well|107.5|29.5|well@0||120.5|29.5
+AP-Well|net@7|||S900|Q1|n-trans-well|42|-9|substr@0||42|-30.5
+AMetal-1|net@8|||S0|contact@5||96.5|29.5|pin@12||42|29.5
+AN-Active|net@12|||S1800|Q1|diff-bottom|54.5|-8.5|contact@3||57.5|-8.5
+APolysilicon-1|net@15|||S2700|Q1|poly-right|42|3|contact@4||42|9.5
+AMetal-1|net@16||1|S900|contact@2||26.5|-9|substr@0||26.5|-30.5
+AMetal-1|net@17||1|S900|contact@3||57.5|-9|substr@0||57.5|-30.5
+AMetal-1|net@18|||S0|pin@10||41.5|-53.5|pin@9||-134.5|-53.5
+AMetal-1|net@19||1|S900|substr@0||41.5|-30.5|pin@10||41.5|-53.5
+AP-Active|net@20|||S2700|Q0|diff-top|107.5|33.25|contact@1||107.5|36
+AP-Active|net@21|||S900|Q0|diff-bottom|107.5|25.75|contact@0||107.5|21.5
+AMetal-1|net@28||1|S900|pin@10||41.5|-53.5|pin@15||41.5|-53.5
+AMetal-1|net@29|||S900|R1|right|96|44|contact@5||96|29.5
+AMetal-1|net@30|||S2700|R0|right|96|16.5|contact@5||96|29.5
+AMetal-1|net@31||1|S2700|pin@15||41.5|-53.5|pin@16||41.5|-53.5
+AMetal-1|net@32|||S0|R0|left|95.5|-53.5|pin@16||41.5|-53.5
+AMetal-1|net@33|||S0|R1|left|-114|44|pin@17||-127.5|44
+EGND||D5G2;|pin@9||G
+EVIN||D5G2;|pin@17||I
+EVOUT||D5G2;|pin@8||O
+X
+
+# Cell Voltage_Divider;1{sch}
+CVoltage_Divider;1{sch}||schematic|1766647085842|1771767118695|
+N4-Port-Transistor|Q0|D5G1;X-1;Y1.5;|3|0|||YR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S3|SIM_spice_model(D5G1;Y-3;)SPMOS
+N4-Port-Transistor|Q1|D5G1;X-1.5;Y1;|-8|-4|||||ATTR_length(D5G0.5;X-0.5;Y-1;)S20|ATTR_width(D5G1;X0.5;Y-1;)S20|SIM_spice_model(D5G1;Y-2.5;)SNMOS
+NResistor|R0|D5G1;Y-1.5;|-2|-5|||YRRR|9|ATTR_length(D5G0.25;X-1.5;)D60.0|ATTR_width(D5G0.5;X1.5;)D10.0|SCHEM_resistance(D5G1;Y1.5;)S300
+NResistor|R1|D5G1;Y1.5;|-13|0||||9|ATTR_length(D5G0.25;X-1.5;)D200.0|ATTR_width(D5G0.5;X1.5;)D10.0|SCHEM_resistance(D5G1;Y-1.5;)S1k
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOff-Page|conn@0||-20|0||||
+NOff-Page|conn@2||14|1||||
+NGround|gnd@0||-2|-15||||
+Ngeneric:Invisible-Pin|pin@2||-3|-17.5|||||SIM_spice_card(D5G1;)S".include \"E:\\Analog_IC_Design\\ThucHanh\\K22_TKVMTT\\Electric_2025\\libs\\models\\C5_models.txt\""
+Ngeneric:Invisible-Pin|pin@3||-16|-19.5|||||SIM_spice_card(D5G1;)SVVIN VIN GND SIN(2.5 2.5 1K) AC=1
+NWire_Pin|pin@8||5|2||||
+NWire_Pin|pin@9||9|2||||
+NWire_Pin|pin@10||9|-2||||
+NWire_Pin|pin@11||5|-2||||
+NWire_Pin|pin@15||-10|-6||||
+NWire_Pin|pin@16||-10|-9||||
+NWire_Pin|pin@17||-6|-9||||
+NWire_Pin|pin@18||-6|-6||||
+Ngeneric:Invisible-Pin|pin@21||-18.5|-21.5|||||SIM_spice_card(D5G1;)S.ac DEC 1000 100MEG 100G
+Ngeneric:Invisible-Pin|pin@22||-17.5|-23.5|||||SIM_spice_card(D5G1;)S.meas ac tmp max mag(v(VOUT))
+Ngeneric:Invisible-Pin|pin@23||-14.5|-25.5|||||SIM_spice_card(D5G1;)S.meas ac fcut when mag(v(VOUT)) = tmp/sqrt(2)
+NWire_Pin|pin@28||-9|-9||||
+NWire_Pin|pin@29||9|1||||
+NWire_Pin|pin@30||-8|0||||
+NWire_Pin|pin@32||-2|0||||
+NWire_Pin|pin@33||-2|-9||||
+Awire|net@10|||1800|conn@0|y|-18|0|R1|a|-15|0
+Awire|net@17|||2700|Q0|s|5|2|pin@8||5|2
+Awire|net@18|||1800|pin@8||5|2|pin@9||9|2
+Awire|net@20|||0|pin@10||9|-2|pin@11||5|-2
+Awire|net@21|||2700|pin@11||5|-2|Q0|d|5|-2
+Awire|net@31|||0|Q1|s|-10|-6|pin@15||-10|-6
+Awire|net@32|||900|pin@15||-10|-6|pin@16||-10|-9
+Awire|net@34|||2700|pin@17||-6|-9|pin@18||-6|-6
+Awire|net@35|||0|pin@18||-6|-6|Q1|d|-6|-6
+Awire|net@54|||1800|pin@16||-10|-9|pin@28||-9|-9
+Awire|net@56|||900|Q1|b|-9|-6|pin@28||-9|-9
+Awire|net@58|||900|pin@9||9|2|pin@29||9|1
+Awire|net@60|||1800|Q0|b|5|1|pin@29||9|1
+Awire|net@62|||1800|R1|b|-11|0|pin@30||-8|0
+Awire|net@64|||2700|Q1|g|-8|-3|pin@30||-8|0
+Awire|net@70|||0|Q0|g|2|0|pin@32||-2|0
+Awire|net@71|||0|pin@32||-2|0|pin@30||-8|0
+Awire|net@72|||2700|R0|b|-2|-3|pin@32||-2|0
+Awire|net@74|||1800|pin@28||-9|-9|pin@17||-6|-9
+Awire|net@75|||900|R0|a|-2|-7|pin@33||-2|-9
+Awire|net@76|||900|pin@33||-2|-9|gnd@0||-2|-13
+Awire|net@77|||1800|pin@17||-6|-9|pin@33||-2|-9
+Awire|net@78|||2700|pin@10||9|-2|pin@29||9|1
+Awire|net@79|||1800|pin@29||9|1|conn@2|a|12|1
+EGND||D5G2;Y-1;|gnd@0||G
+EVIN||D5G2;X1.5;|conn@0|a|I
+EVOUT||D5G2;X3;|conn@2|a|O
+X
+
+# Cell Voltage_Divider_1;1{sch}
+CVoltage_Divider_1;1{sch}||schematic|1766647085842|1771766966416|
+NResistor|R0|D5G1;Y-1.5;|-8|-5|||RRR||SCHEM_resistance(D5G1;Y1.5;)S300
+NResistor|R1|D5G1;Y1;|-13|0|||||SCHEM_resistance(D5G1;Y-1;)S1k
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOff-Page|conn@0||-20|0||||
+NOff-Page|conn@2||-2|0||||
+NGround|gnd@0||-8|-12||||
+Ngeneric:Invisible-Pin|pin@2||-3|-17.5|||||SIM_spice_card(D5G1;)S".include \"E:\\Analog_IC_Design\\ThucHanh\\K22_TKVMTT\\Electric_2025\\libs\\models\\C5_models.txt\""
+Ngeneric:Invisible-Pin|pin@3||-18|-19.5|||||SIM_spice_card(D5G1;)SVVIN VIN GND SIN(2.5 2.5 1K)
+Ngeneric:Invisible-Pin|pin@4||-24|-21.5|||||SIM_spice_card(D5G1;)S.op
+Ngeneric:Invisible-Pin|pin@6||-21|-23.5|||||SIM_spice_card(D5G1;)S;.trans 0 2ms 1ns 
+NWire_Pin|pin@34||-8|0||||
+Awire|net@80|||1800|conn@0|y|-18|0|R1|a|-15|0
+Awire|net@87|||0|pin@34||-8|0|R1|b|-11|0
+Awire|net@88|||2700|R0|a|-8|-3|pin@34||-8|0
+Awire|net@89|||900|R0|b|-8|-7|gnd@0||-8|-10
+Awire|net@90|||1800|pin@34||-8|0|conn@2|a|-4|0
+EGND||D5G2;Y-1;|gnd@0||G
+EVIN||D5G2;X1.5;|conn@0|a|I
+EVOUT||D5G2;X3;|conn@2|a|O
+X

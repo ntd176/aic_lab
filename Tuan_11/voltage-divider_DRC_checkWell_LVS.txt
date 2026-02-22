@@ -1,0 +1,97 @@
+=================================1=================================
+Running DRC with area bit on, extension bit on, Mosis bit
+Checking again hierarchy .... (0.0 secs)
+Found 5 networks
+Checking cell 'Voltage_Divider{lay}'
+	No errors/warnings found
+0 errors and 0 warnings found (took 0.041 secs)
+=================================2=================================
+Checking Wells and Substrates in 'bai_9:Voltage_Divider{lay}' ...
+   Geometry collection found 14 well pieces, took 0.0 secs
+   Geometry analysis used 8 threads and took 0.008 secs
+NetValues propagation took 0.0 secs
+Checking short circuits in 2 well contacts
+   Additional analysis took 0.002 secs
+No Well errors found (took 0.01 secs)
+=================================3=================================
+Hierarchical NCC every cell in the design: cell 'Voltage_Divider{sch}'  cell 'Voltage_Divider{lay}'
+Comparing: bai_9:Voltage_Divider{sch} with: bai_9:Voltage_Divider{lay}
+********************************************************************************
+  NCC net list construction took 0.0 seconds.
+  Export name matching took: 0.0 seconds
+--- NCC starting merge process with 8 Parts
+  parallel and series merge trip 1
+    Parallel merged 0 Parts
+    Serial merged 0 Transistors
+--- NCC finishing merge process with 8 Parts
+
+  Serial/parallel merge took: 0.006 seconds
+  Cell: bai_9:Voltage_Divider{sch} has 4 wires, 4 parts, and 3 ports after series/parallel combination. Instance path: 
+  Cell: bai_9:Voltage_Divider{lay} has 4 wires, 4 parts, and 3 ports after series/parallel combination. Instance path: 
+Begin partitioning based on local characteristics 
+
+Partition Parts using local information
+part type is p2res
+part type is nmos_CAP_withBody
+part type is pmos_CAP_withBody
+StratPartType produced 3 offspring
+ offspring max sizes: 2 1 1
+  offspring counts: #matched=2 #mismatched=0 #active=1
+StratPartPopularity produced 0 offspring
+Partition Wires using local information
+StratLocalPartitionWires produced 4 offspring
+ offspring max sizes: 1 1 1 1
+  offspring counts: #matched=4 #mismatched=0 #active=0
+End partitioning based on local characteristics 
+0 StratHashParts doing  Parts
+ processed 4 Parts from 2 leaf Records
+  offspring counts: #matched=0 #mismatched=0 #active=0
+ offspring max sizes:
+ took 5 miliseconds
+
+1 StratHashWires doing  Wires
+ processed 8 Wires from 4 leaf records
+  offspring counts: #matched=0 #mismatched=0 #active=0
+ offspring max sizes:
+ took 0 miliseconds
+
+  Local partitioning took 0.019 seconds
+----- starting HashCodePartitioningNew
+----- hash all Parts
+----- done HashCodePartitioningNew
+  Export checking took 0.0 seconds
+  Size checking took 0.0 seconds
+=========== Printing Matched Parts:
+----- Starting Print Strategy
+**  Depth= 0 Matched leaf Record randCode=1470946995 value=899303327 maxSize=1
+**  Depth= 1 Circuit code=1470946995 size=1
+p2res R0 in Cell: bai_9:Voltage_Divider{sch} W= 0.0 L=300.0 S= GND E= net@62
+**  Depth= 1 Circuit code=1470946995 size=1
+p2res R0 in Cell: bai_9:Voltage_Divider{lay} W= 0.0 L=300.0 S= GND E= net@4
+----- Ending Print Strategy
+----- Starting Print Strategy
+**  Depth= 0 Matched leaf Record randCode=1953586133 value=1839975427 maxSize=1
+**  Depth= 1 Circuit code=1953586133 size=1
+p2res R1 in Cell: bai_9:Voltage_Divider{sch} W= 0.0 L=1000.0 S= VIN E= net@62
+**  Depth= 1 Circuit code=1953586133 size=1
+p2res R1 in Cell: bai_9:Voltage_Divider{lay} W= 0.0 L=1000.0 S= VIN E= net@4
+----- Ending Print Strategy
+----- Starting Print Strategy
+**  Depth= 0 Matched leaf Record randCode=-77517647 value=2797 maxSize=1
+**  Depth= 1 Circuit code=-77517647 size=1
+nmos_CAP_withBody Q1 in Cell: bai_9:Voltage_Divider{sch} W=20.0 L=20.0 S=GND G=net@62 D=GND B=GND
+**  Depth= 1 Circuit code=-77517647 size=1
+nmos_CAP_withBody Q1 in Cell: bai_9:Voltage_Divider{lay} W=20.0 L=20.0 S=GND G=net@4 D=GND B=GND
+----- Ending Print Strategy
+----- Starting Print Strategy
+**  Depth= 0 Matched leaf Record randCode=2127899440 value=2798 maxSize=1
+**  Depth= 1 Circuit code=2127899440 size=1
+pmos_CAP_withBody Q0 in Cell: bai_9:Voltage_Divider{sch} W=3.0 L=2.0 S=VOUT G=net@62 D=VOUT B=VOUT
+**  Depth= 1 Circuit code=2127899440 size=1
+pmos_CAP_withBody Q0 in Cell: bai_9:Voltage_Divider{lay} W=3.0 L=2.0 S=VOUT G=net@4 D=VOUT B=VOUT
+----- Ending Print Strategy
+=========== Done Printing
+********************************************************************************
+  exports match, topologies match, sizes match in 0.05 seconds.
+Summary for all cells: exports match, topologies match, sizes match
+NCC command completed in: 0.066 seconds.

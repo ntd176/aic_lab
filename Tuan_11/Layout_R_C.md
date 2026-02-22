@@ -1,0 +1,1 @@
+# Hiện thực điện trở, tụ điện trong vi mạch 

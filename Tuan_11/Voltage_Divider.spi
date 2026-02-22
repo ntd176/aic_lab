@@ -1,0 +1,57 @@
+*** SPICE deck for cell Voltage_Divider{lay} from library bai_9
+*** Created on Sun Dec 28, 2025 21:57:36
+*** Last revised on Sun Feb 22, 2026 20:40:21
+*** Written on Sun Feb 22, 2026 20:40:46 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+***    P-Active:	areacap=0.9FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    N-Active:	areacap=0.9FF/um^2,	edgecap=0.0FF/um,	res=3.0ohms/sq
+***    Polysilicon-1:	areacap=0.1467FF/um^2,	edgecap=0.0608FF/um,	res=6.2ohms/sq
+***    Polysilicon-2:	areacap=1.0FF/um^2,	edgecap=0.0FF/um,	res=50.0ohms/sq
+***    Transistor-Poly:	areacap=0.09FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Poly-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=2.2ohms/sq
+***    Active-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Metal-1:	areacap=0.1209FF/um^2,	edgecap=0.1104FF/um,	res=0.078ohms/sq
+***    Via1:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+***    Metal-2:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via2:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.9ohms/sq
+***    Metal-3:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via3:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-4:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via4:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-5:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via5:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-6:	areacap=0.0423FF/um^2,	edgecap=0.1273FF/um,	res=0.036ohms/sq
+***    Hi-Res:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+*** WARNING: no power connection for P-transistor wells in cell 'Voltage_Divider{lay}'
+
+*** TOP LEVEL CELL: Voltage_Divider{lay}
+MQ0 VOUT net@4 VOUT VOUT PMOS L=0.6U W=0.9U AS=7.83P AD=7.83P PS=15.9U PD=15.9U
+MQ1 gnd net@4#4Q1_poly-right gnd gnd NMOS L=6U W=6U AS=23.4P AD=23.4P PS=30.3U PD=30.3U
+RR0 net@4#1contact@5_metal-1-polysilicon-1 gnd 300
+RR1 net@4#1contact@5_metal-1-polysilicon-1 VIN 1k
+** Extracted Parasitic Capacitors ***
+C0 net@4 0 0.118fF
+C1 VOUT 0 3.842fF
+C2 net@4#4Q1_poly-right 0 0.102fF
+C3 net@4#1contact@5_metal-1-polysilicon-1 0 10.524fF
+C4 VIN 0 1.335fF
+** Extracted Parasitic Resistors ***
+R0 net@4 net@4##0 7.75
+C5 net@4##0 0 0.118fF
+R1 net@4##0 net@4##1 7.75
+C6 net@4##1 0 0.118fF
+R2 net@4##1 net@4#1contact@5_metal-1-polysilicon-1 7.75
+R3 net@4#4Q1_poly-right net@4#4Q1_poly-right##0 6.717
+C7 net@4#4Q1_poly-right##0 0 0.102fF
+R4 net@4#4Q1_poly-right##0 net@4#4Q1_poly-right##1 6.717
+C8 net@4#4Q1_poly-right##1 0 0.102fF
+R5 net@4#4Q1_poly-right##1 net@4#1contact@5_metal-1-polysilicon-1 6.717
+
+* Spice Code nodes in cell cell 'Voltage_Divider{lay}'
+.include "E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\C5_models.txt"
+VVIN VIN GND SIN(2.5 2.5 1K) AC=1
+.ac  DEC 1000 1MEG 100G
+.meas ac tmp max mag(v(VOUT))
+.meas ac fcut when mag(v(VOUT)) = tmp/sqrt(2)
+.END

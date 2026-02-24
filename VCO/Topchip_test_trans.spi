@@ -1,0 +1,87 @@
+*** SPICE deck for cell Topchip_test_trans{sch} from library ProCK
+*** Created on Wed Jan 14, 2026 14:17:49
+*** Last revised on Sun Jan 25, 2026 15:37:31
+*** Written on Mon Jan 26, 2026 15:25:02 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT ProCK__IO_PAD FROM CELL IO_PAD{sch}
+.SUBCKT ProCK__IO_PAD gnd IOA vdd
+** GLOBAL gnd
+** GLOBAL vdd
+MQ0 IOA vdd vdd vdd PMOS L=0.6U W=2.4U
+MQ1 IOA gnd gnd gnd NMOS L=0.6U W=1.2U
+.ENDS ProCK__IO_PAD
+
+*** SUBCIRCUIT ProCK__buffer FROM CELL buffer{sch}
+.SUBCKT ProCK__buffer gnd in out vdd
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos-4@0 out in gnd gnd NMOS L=0.6U W=7.5U
+Mpmos-4@0 out in vdd vdd PMOS L=0.6U W=15U
+.ENDS ProCK__buffer
+
+*** SUBCIRCUIT ProCK__inv_stage FROM CELL inv_stage{sch}
+.SUBCKT ProCK__inv_stage gnd in out vdd vn vp
+** GLOBAL gnd
+** GLOBAL vdd
+MM1 net@2 vn gnd gnd NMOS L=0.6U W=3U
+MM2 out in net@2 gnd NMOS L=0.6U W=3U
+MM3 out in net@0 vdd PMOS L=0.6U W=6U
+MM4 net@0 vp vdd vdd PMOS L=0.6U W=6U
+.ENDS ProCK__inv_stage
+
+*** SUBCIRCUIT ProCK__VCO_core FROM CELL VCO_core{sch}
+.SUBCKT ProCK__VCO_core gnd Output Vctrl vdd
+** GLOBAL gnd
+** GLOBAL vdd
+MQ0 vp Vctrl net@9 gnd NMOS L=0.6U W=99.9U
+MQ1 vn vn gnd gnd NMOS L=0.6U W=6U
+MQ2 vn vp vdd vdd PMOS L=0.6U W=9.9U
+MQ3 vp vp vdd vdd PMOS L=0.6U W=9.9U
+RR0 gnd net@9 21k
+RR1 gnd vp 16.5k
+Xbuffer@0 gnd in out_buffer_1 vdd ProCK__buffer
+Xbuffer@1 gnd out_buffer_1 Output vdd ProCK__buffer
+Xinv_stag@0 gnd in out_inv_1 vdd vn vp ProCK__inv_stage
+Xinv_stag@1 gnd out_inv_1 out_inv_2 vdd vn vp ProCK__inv_stage
+Xinv_stag@2 gnd out_inv_2 out_inv_3 vdd vn vp ProCK__inv_stage
+Xinv_stag@3 gnd out_inv_3 out_inv_4 vdd vn vp ProCK__inv_stage
+Xinv_stag@4 gnd out_inv_4 out_inv_5 vdd vn vp ProCK__inv_stage
+Xinv_stag@5 gnd out_inv_5 out_inv_6 vdd vn vp ProCK__inv_stage
+Xinv_stag@6 gnd out_inv_6 in vdd vn vp ProCK__inv_stage
+
+* Spice Code nodes in cell cell 'VCO_core{sch}'
+.include "E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\C5_models.txt"
+.ENDS ProCK__VCO_core
+
+*** SUBCIRCUIT ProCK__Topchip FROM CELL Topchip{sch}
+.SUBCKT ProCK__Topchip gnd Output vdd Ven
+** GLOBAL gnd
+** GLOBAL vdd
+XIO_PAD@0 gnd Ven vdd ProCK__IO_PAD
+XIO_PAD@1 gnd Output vdd ProCK__IO_PAD
+XVCO_core@0 gnd Output Ven vdd ProCK__VCO_core
+
+* Spice Code nodes in cell cell 'Topchip{sch}'
+.include "E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\C5_models.txt"
+.ENDS ProCK__Topchip
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: Topchip_test_trans{sch}
+CC_Load gnd Output 0.1p
+XTopchip@0 gnd Output vdd Ven ProCK__Topchip
+VV0 Ven gnd DC {Ven_val}
+VV1 vdd gnd DC 5
+
+* Spice Code nodes in cell cell 'Topchip_test_trans{sch}'
+.include "E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\C5_models.txt"
+.tran 0 100n 0 0.1n uic
+.probe V(Output)
+.ic V(out_inv_1)=0
+.meas tran T_cycle TRIG V(Output)=2.5 RISE=5 TARG V(Output)=2.5 RISE=6
+.meas freq param 1/T_cycle
+.step param Ven_val 0 5 1
+.temp 25
+.END

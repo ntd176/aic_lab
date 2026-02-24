@@ -1,0 +1,323 @@
+*** SPICE deck for cell Topchip_test_maxNoise{lay} from library ProCK
+*** Created on Wed Jan 21, 2026 20:31:45
+*** Last revised on Mon Jan 26, 2026 14:56:41
+*** Written on Mon Jan 26, 2026 14:56:56 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+***    P-Active:	areacap=0.9FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    N-Active:	areacap=0.9FF/um^2,	edgecap=0.0FF/um,	res=3.0ohms/sq
+***    Polysilicon-1:	areacap=0.1467FF/um^2,	edgecap=0.0608FF/um,	res=6.2ohms/sq
+***    Polysilicon-2:	areacap=1.0FF/um^2,	edgecap=0.0FF/um,	res=50.0ohms/sq
+***    Transistor-Poly:	areacap=0.09FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Poly-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=2.2ohms/sq
+***    Active-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Metal-1:	areacap=0.1209FF/um^2,	edgecap=0.1104FF/um,	res=0.078ohms/sq
+***    Via1:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+***    Metal-2:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via2:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.9ohms/sq
+***    Metal-3:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via3:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-4:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via4:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-5:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via5:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-6:	areacap=0.0423FF/um^2,	edgecap=0.1273FF/um,	res=0.036ohms/sq
+***    Hi-Res:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+
+*** SUBCIRCUIT ProCK__IO_PAD FROM CELL IO_PAD{lay}
+.SUBCKT ProCK__IO_PAD gnd IOA vdd
+MQ1 IOA gnd gnd gnd NMOS L=0.6U W=1.2U AS=97.29P AD=3.465P PS=160.066U PD=7.5U
+MQ0 IOA vdd vdd vdd PMOS L=0.6U W=2.4U AS=155.07P AD=3.465P PS=254.507U PD=7.5U
+** Extracted Parasitic Capacitors ***
+C0 IOA 0 5.433fF
+** Extracted Parasitic Resistors ***
+.ENDS ProCK__IO_PAD
+
+*** SUBCIRCUIT ProCK__buffer FROM CELL buffer{lay}
+.SUBCKT ProCK__buffer gnd in out vdd
+Mnmos-4@0 out in gnd gnd NMOS L=0.6U W=7.5U AS=29.25P AD=27P PS=37.8U PD=27.3U
+Mpmos-4@0 out in vdd vdd PMOS L=0.6U W=15U AS=47.25P AD=27P PS=52.8U PD=27.3U
+** Extracted Parasitic Capacitors ***
+C0 out 0 6.531fF
+C1 in 0 0.157fF
+C2 in#1pin@0_polysilicon-1 0 0.325fF
+** Extracted Parasitic Resistors ***
+R0 in#0nmos@0_poly-right in#0nmos@0_poly-right##0 5.425
+R1 in#0nmos@0_poly-right##0 in#1pin@0_polysilicon-1 5.425
+R2 in#1pin@0_polysilicon-1 in#1pin@0_polysilicon-1##0 6.975
+R3 in#1pin@0_polysilicon-1##0 in#2pmos@0_poly-left 6.975
+R4 in#1pin@0_polysilicon-1 in#1pin@0_polysilicon-1##0 9.042
+C3 in#1pin@0_polysilicon-1##0 0 0.157fF
+R5 in#1pin@0_polysilicon-1##0 in#1pin@0_polysilicon-1##1 9.042
+C4 in#1pin@0_polysilicon-1##1 0 0.157fF
+R6 in#1pin@0_polysilicon-1##1 in#1pin@0_polysilicon-1##2 9.042
+C5 in#1pin@0_polysilicon-1##2 0 0.157fF
+R7 in#1pin@0_polysilicon-1##2 in#1pin@0_polysilicon-1##3 9.042
+C6 in#1pin@0_polysilicon-1##3 0 0.157fF
+R8 in#1pin@0_polysilicon-1##3 in#1pin@0_polysilicon-1##4 9.042
+C7 in#1pin@0_polysilicon-1##4 0 0.157fF
+R9 in#1pin@0_polysilicon-1##4 in 9.042
+.ENDS ProCK__buffer
+
+*** SUBCIRCUIT ProCK__inv_stage FROM CELL inv_stage{lay}
+.SUBCKT ProCK__inv_stage gnd in out vdd vn vp
+MM1 net@2 vn gnd gnd NMOS L=0.6U W=3U AS=7.2P AD=10.8P PS=10.8U PD=13.8U
+MM2 out in net@2 gnd NMOS L=0.6U W=3U AS=7.2P AD=18.45P PS=10.8U PD=28.8U
+MM3 out in net@0 vdd PMOS L=0.6U W=6U AS=14.4P AD=25.65P PS=16.8U PD=34.8U
+MM4 net@0 vp vdd vdd PMOS L=0.6U W=6U AS=14.4P AD=10.8P PS=16.8U PD=13.8U
+** Extracted Parasitic Capacitors ***
+C0 net@2 0 3.512fF
+C1 out 0 4.061fF
+C2 vp 0 0.171fF
+C3 net@10 0 2.415fF
+C4 vn 0 0.157fF
+C5 in 0 0.157fF
+C6 vp#1pin@2_polysilicon-1 0 0.234fF
+C7 in#1pin@3_polysilicon-1 0 0.351fF
+C8 vn#1pin@6_polysilicon-1 0 0.22fF
+C9 in#2pmos@1_poly-left 0 0.115fF
+** Extracted Parasitic Resistors ***
+R0 vp#0pmos@0_poly-right vp#1pin@2_polysilicon-1 6.2
+R1 vp#1pin@2_polysilicon-1 vp#1pin@2_polysilicon-1##0 9.817
+C10 vp#1pin@2_polysilicon-1##0 0 0.171fF
+R2 vp#1pin@2_polysilicon-1##0 vp#1pin@2_polysilicon-1##1 9.817
+C11 vp#1pin@2_polysilicon-1##1 0 0.171fF
+R3 vp#1pin@2_polysilicon-1##1 vp#1pin@2_polysilicon-1##2 9.817
+C12 vp#1pin@2_polysilicon-1##2 0 0.171fF
+R4 vp#1pin@2_polysilicon-1##2 vp#1pin@2_polysilicon-1##3 9.817
+C13 vp#1pin@2_polysilicon-1##3 0 0.171fF
+R5 vp#1pin@2_polysilicon-1##3 vp#1pin@2_polysilicon-1##4 9.817
+C14 vp#1pin@2_polysilicon-1##4 0 0.171fF
+R6 vp#1pin@2_polysilicon-1##4 vp 9.817
+R7 in#0nmos@0_poly-right in#1pin@3_polysilicon-1 7.75
+R8 in#1pin@3_polysilicon-1 in#1pin@3_polysilicon-1##0 8.525
+C15 in#1pin@3_polysilicon-1##0 0 0.115fF
+R9 in#1pin@3_polysilicon-1##0 in#2pmos@1_poly-left 8.525
+R10 in#1pin@3_polysilicon-1 in#1pin@3_polysilicon-1##0 9.042
+C16 in#1pin@3_polysilicon-1##0 0 0.157fF
+R11 in#1pin@3_polysilicon-1##0 in#1pin@3_polysilicon-1##1 9.042
+C17 in#1pin@3_polysilicon-1##1 0 0.157fF
+R12 in#1pin@3_polysilicon-1##1 in#1pin@3_polysilicon-1##2 9.042
+C18 in#1pin@3_polysilicon-1##2 0 0.157fF
+R13 in#1pin@3_polysilicon-1##2 in#1pin@3_polysilicon-1##3 9.042
+C19 in#1pin@3_polysilicon-1##3 0 0.157fF
+R14 in#1pin@3_polysilicon-1##3 in#1pin@3_polysilicon-1##4 9.042
+C20 in#1pin@3_polysilicon-1##4 0 0.157fF
+R15 in#1pin@3_polysilicon-1##4 in 9.042
+R16 vn#0nmos@1_poly-left vn#1pin@6_polysilicon-1 6.2
+R17 vn#1pin@6_polysilicon-1 vn#1pin@6_polysilicon-1##0 9.042
+C21 vn#1pin@6_polysilicon-1##0 0 0.157fF
+R18 vn#1pin@6_polysilicon-1##0 vn#1pin@6_polysilicon-1##1 9.042
+C22 vn#1pin@6_polysilicon-1##1 0 0.157fF
+R19 vn#1pin@6_polysilicon-1##1 vn#1pin@6_polysilicon-1##2 9.042
+C23 vn#1pin@6_polysilicon-1##2 0 0.157fF
+R20 vn#1pin@6_polysilicon-1##2 vn#1pin@6_polysilicon-1##3 9.042
+C24 vn#1pin@6_polysilicon-1##3 0 0.157fF
+R21 vn#1pin@6_polysilicon-1##3 vn#1pin@6_polysilicon-1##4 9.042
+C25 vn#1pin@6_polysilicon-1##4 0 0.157fF
+R22 vn#1pin@6_polysilicon-1##4 vn 9.042
+.ENDS ProCK__inv_stage
+
+*** SUBCIRCUIT ProCK__VCO_core FROM CELL VCO_core{lay}
+.SUBCKT ProCK__VCO_core gnd Output Vctrl vdd
+Xbuffer@0 gnd in out_buffer_1 vdd ProCK__buffer
+Xbuffer@1 gnd out_buffer_1 Output vdd ProCK__buffer
+Xinv_stag@0 gnd in out_inv_1 vdd vn vp ProCK__inv_stage
+Xinv_stag@1 gnd out_inv_1 out_inv_2 vdd vn vp ProCK__inv_stage
+Xinv_stag@2 gnd out_inv_2 out_inv_3 vdd vn vp ProCK__inv_stage
+Xinv_stag@3 gnd out_inv_3 out_inv_4 vdd vn vp ProCK__inv_stage
+Xinv_stag@4 gnd out_inv_4 out_inv_5 vdd vn vp ProCK__inv_stage
+Xinv_stag@5 gnd out_inv_5 out_inv_6 vdd vn vp ProCK__inv_stage
+Xinv_stag@6 gnd out_inv_6 in vdd vn vp ProCK__inv_stage
+MQ0 vp Vctrl net@9 gnd NMOS L=0.6U W=99.9U AS=128.79P AD=239.76P PS=114U PD=204.6U
+MQ1 vn vn gnd gnd NMOS L=0.6U W=6U AS=28.8P AD=14.31P PS=42.6U PD=19.5U
+MQ2 vn vp vdd vdd PMOS L=0.6U W=9.9U AS=26.82P AD=128.79P PS=36.9U PD=114U
+MQ3 vp vp vdd vdd PMOS L=0.6U W=9.9U AS=14.31P AD=26.82P PS=19.5U PD=36.9U
+RR0 gnd net@9 21k
+RR1 gnd vp 16.5k
+** Extracted Parasitic Capacitors ***
+C0 net@39 0 19.38fF
+C1 out_buffer_1 0 1.756fF
+C2 Output 0 0.933fF
+C3 net@39#4contact@1_metal-1-metal-2 0 18.886fF
+C4 net@47 0 45.806fF
+C5 vp 0 20.938fF
+C6 net@142 0 49.229fF
+C7 vp#9nmos@0_diff-top 0 54.367fF
+C8 vp#13inv_stag@0_vp 0 76.205fF
+C9 Vctrl 0 0.18fF
+C10 out_inv_1 0 1.756fF
+C11 out_inv_2 0 1.756fF
+C12 out_inv_3 0 1.756fF
+C13 out_inv_4 0 1.756fF
+C14 out_inv_5 0 1.756fF
+C15 out_inv_6 0 1.756fF
+C16 Vctrl#0nmos@0_poly-left 0 0.141fF
+C17 net@47#20nmos@1_poly-left 0 0.126fF
+C18 net@142#2pin@41_metal-1 0 52.083fF
+C19 vp#11pin@48_metal-1 0 44.105fF
+C20 vp#3pin@28_polysilicon-1 0 0.252fF
+C21 vp#4pin@29_polysilicon-1 0 0.427fF
+C22 net@47#21pin@36_polysilicon-1 0 0.252fF
+C23 Vctrl#1pin@54_polysilicon-1 0 0.321fF
+C24 vp#2pmos@0_poly-right 0 0.267fF
+** Extracted Parasitic Resistors ***
+R0 net@39#4contact@1_metal-1-metal-2 net@39 6.825
+R1 vp#2pmos@0_poly-right vp#3pin@28_polysilicon-1 9.3
+R2 vp#4pin@29_polysilicon-1 vp#5pmos@1_poly-right 9.3
+R3 vp#2pmos@0_poly-right vp#2pmos@0_poly-right##0 9.3
+C25 vp#2pmos@0_poly-right##0 0 0.173fF
+R4 vp#2pmos@0_poly-right##0 vp#2pmos@0_poly-right##1 9.3
+C26 vp#2pmos@0_poly-right##1 0 0.173fF
+R5 vp#2pmos@0_poly-right##1 vp#2pmos@0_poly-right##2 9.3
+C27 vp#2pmos@0_poly-right##2 0 0.173fF
+R6 vp#2pmos@0_poly-right##2 vp#2pmos@0_poly-right##3 9.3
+C28 vp#2pmos@0_poly-right##3 0 0.173fF
+R7 vp#2pmos@0_poly-right##3 vp#2pmos@0_poly-right##4 9.3
+C29 vp#2pmos@0_poly-right##4 0 0.173fF
+R8 vp#2pmos@0_poly-right##4 vp#2pmos@0_poly-right##5 9.3
+C30 vp#2pmos@0_poly-right##5 0 0.173fF
+R9 vp#2pmos@0_poly-right##5 vp#2pmos@0_poly-right##6 9.3
+C31 vp#2pmos@0_poly-right##6 0 0.173fF
+R10 vp#2pmos@0_poly-right##6 vp#2pmos@0_poly-right##7 9.3
+C32 vp#2pmos@0_poly-right##7 0 0.173fF
+R11 vp#2pmos@0_poly-right##7 vp#2pmos@0_poly-right##8 9.3
+C33 vp#2pmos@0_poly-right##8 0 0.173fF
+R12 vp#2pmos@0_poly-right##8 vp#2pmos@0_poly-right##9 9.3
+C34 vp#2pmos@0_poly-right##9 0 0.173fF
+R13 vp#2pmos@0_poly-right##9 vp 9.3
+R14 net@47#20nmos@1_poly-left net@47#20nmos@1_poly-left##0 7.75
+C35 net@47#20nmos@1_poly-left##0 0 0.126fF
+R15 net@47#20nmos@1_poly-left##0 net@47#20nmos@1_poly-left##1 7.75
+C36 net@47#20nmos@1_poly-left##1 0 0.126fF
+R16 net@47#20nmos@1_poly-left##1 net@47#20nmos@1_poly-left##2 7.75
+C37 net@47#20nmos@1_poly-left##2 0 0.126fF
+R17 net@47#20nmos@1_poly-left##2 net@47#21pin@36_polysilicon-1 7.75
+R18 net@47#21pin@36_polysilicon-1 net@47#21pin@36_polysilicon-1##0 7.75
+C38 net@47#21pin@36_polysilicon-1##0 0 0.126fF
+R19 net@47#21pin@36_polysilicon-1##0 net@47#21pin@36_polysilicon-1##1 7.75
+C39 net@47#21pin@36_polysilicon-1##1 0 0.126fF
+R20 net@47#21pin@36_polysilicon-1##1 net@47#21pin@36_polysilicon-1##2 7.75
+C40 net@47#21pin@36_polysilicon-1##2 0 0.126fF
+R21 net@47#21pin@36_polysilicon-1##2 net@47 7.75
+R22 net@142 net@142##0 9.839
+C41 net@142##0 0 49.229fF
+R23 net@142##0 net@142##1 9.839
+C42 net@142##1 0 49.229fF
+R24 net@142##1 net@142##2 9.839
+C43 net@142##2 0 49.229fF
+R25 net@142##2 net@142##3 9.839
+C44 net@142##3 0 49.229fF
+R26 net@142##3 net@142##4 9.839
+C45 net@142##4 0 49.229fF
+R27 net@142##4 net@142##5 9.839
+C46 net@142##5 0 49.229fF
+R28 net@142##5 net@142##6 9.839
+C47 net@142##6 0 49.229fF
+R29 net@142##6 net@142#2pin@41_metal-1 9.839
+R30 vp#9nmos@0_diff-top vp#9nmos@0_diff-top##0 8.587
+C48 vp#9nmos@0_diff-top##0 0 42.293fF
+R31 vp#9nmos@0_diff-top##0 vp#9nmos@0_diff-top##1 8.587
+C49 vp#9nmos@0_diff-top##1 0 42.293fF
+R32 vp#9nmos@0_diff-top##1 vp#9nmos@0_diff-top##2 8.587
+C50 vp#9nmos@0_diff-top##2 0 42.293fF
+R33 vp#9nmos@0_diff-top##2 vp#9nmos@0_diff-top##3 8.587
+C51 vp#9nmos@0_diff-top##3 0 42.293fF
+R34 vp#9nmos@0_diff-top##3 vp#9nmos@0_diff-top##4 8.587
+C52 vp#9nmos@0_diff-top##4 0 42.293fF
+R35 vp#9nmos@0_diff-top##4 vp#9nmos@0_diff-top##5 8.587
+C53 vp#9nmos@0_diff-top##5 0 42.293fF
+R36 vp#9nmos@0_diff-top##5 vp#11pin@48_metal-1 8.587
+R37 vp#4pin@29_polysilicon-1 vp#4pin@29_polysilicon-1##0 9.3
+C54 vp#4pin@29_polysilicon-1##0 0 0.175fF
+R38 vp#4pin@29_polysilicon-1##0 vp#4pin@29_polysilicon-1##1 9.3
+C55 vp#4pin@29_polysilicon-1##1 0 0.175fF
+R39 vp#4pin@29_polysilicon-1##1 vp#4pin@29_polysilicon-1##2 9.3
+C56 vp#4pin@29_polysilicon-1##2 0 0.175fF
+R40 vp#4pin@29_polysilicon-1##2 vp#4pin@29_polysilicon-1##3 9.3
+C57 vp#4pin@29_polysilicon-1##3 0 0.175fF
+R41 vp#4pin@29_polysilicon-1##3 vp#4pin@29_polysilicon-1##4 9.3
+C58 vp#4pin@29_polysilicon-1##4 0 0.175fF
+R42 vp#4pin@29_polysilicon-1##4 vp#4pin@29_polysilicon-1##5 9.3
+C59 vp#4pin@29_polysilicon-1##5 0 0.175fF
+R43 vp#4pin@29_polysilicon-1##5 vp#4pin@29_polysilicon-1##6 9.3
+C60 vp#4pin@29_polysilicon-1##6 0 0.175fF
+R44 vp#4pin@29_polysilicon-1##6 vp#4pin@29_polysilicon-1##7 9.3
+C61 vp#4pin@29_polysilicon-1##7 0 0.175fF
+R45 vp#4pin@29_polysilicon-1##7 vp#4pin@29_polysilicon-1##8 9.3
+C62 vp#4pin@29_polysilicon-1##8 0 0.175fF
+R46 vp#4pin@29_polysilicon-1##8 vp#4pin@29_polysilicon-1##9 9.3
+C63 vp#4pin@29_polysilicon-1##9 0 0.175fF
+R47 vp#4pin@29_polysilicon-1##9 vp#4pin@29_polysilicon-1##10 9.3
+C64 vp#4pin@29_polysilicon-1##10 0 0.175fF
+R48 vp#4pin@29_polysilicon-1##10 vp#4pin@29_polysilicon-1##11 9.3
+C65 vp#4pin@29_polysilicon-1##11 0 0.175fF
+R49 vp#4pin@29_polysilicon-1##11 vp#13inv_stag@0_vp 9.3
+R50 vp#9nmos@0_diff-top vp 4.29
+R51 Vctrl#0nmos@0_poly-left Vctrl#0nmos@0_poly-left##0 9.3
+C66 Vctrl#0nmos@0_poly-left##0 0 0.141fF
+R52 Vctrl#0nmos@0_poly-left##0 Vctrl#0nmos@0_poly-left##1 9.3
+C67 Vctrl#0nmos@0_poly-left##1 0 0.141fF
+R53 Vctrl#0nmos@0_poly-left##1 Vctrl#1pin@54_polysilicon-1 9.3
+R54 Vctrl#1pin@54_polysilicon-1 Vctrl#1pin@54_polysilicon-1##0 9.538
+C68 Vctrl#1pin@54_polysilicon-1##0 0 0.18fF
+R55 Vctrl#1pin@54_polysilicon-1##0 Vctrl#1pin@54_polysilicon-1##1 9.538
+C69 Vctrl#1pin@54_polysilicon-1##1 0 0.18fF
+R56 Vctrl#1pin@54_polysilicon-1##1 Vctrl#1pin@54_polysilicon-1##2 9.538
+C70 Vctrl#1pin@54_polysilicon-1##2 0 0.18fF
+R57 Vctrl#1pin@54_polysilicon-1##2 Vctrl#1pin@54_polysilicon-1##3 9.538
+C71 Vctrl#1pin@54_polysilicon-1##3 0 0.18fF
+R58 Vctrl#1pin@54_polysilicon-1##3 Vctrl#1pin@54_polysilicon-1##4 9.538
+C72 Vctrl#1pin@54_polysilicon-1##4 0 0.18fF
+R59 Vctrl#1pin@54_polysilicon-1##4 Vctrl#1pin@54_polysilicon-1##5 9.538
+C73 Vctrl#1pin@54_polysilicon-1##5 0 0.18fF
+R60 Vctrl#1pin@54_polysilicon-1##5 Vctrl#1pin@54_polysilicon-1##6 9.538
+C74 Vctrl#1pin@54_polysilicon-1##6 0 0.18fF
+R61 Vctrl#1pin@54_polysilicon-1##6 Vctrl#1pin@54_polysilicon-1##7 9.538
+C75 Vctrl#1pin@54_polysilicon-1##7 0 0.18fF
+R62 Vctrl#1pin@54_polysilicon-1##7 Vctrl#1pin@54_polysilicon-1##8 9.538
+C76 Vctrl#1pin@54_polysilicon-1##8 0 0.18fF
+R63 Vctrl#1pin@54_polysilicon-1##8 Vctrl#1pin@54_polysilicon-1##9 9.538
+C77 Vctrl#1pin@54_polysilicon-1##9 0 0.18fF
+R64 Vctrl#1pin@54_polysilicon-1##9 Vctrl#1pin@54_polysilicon-1##10 9.538
+C78 Vctrl#1pin@54_polysilicon-1##10 0 0.18fF
+R65 Vctrl#1pin@54_polysilicon-1##10 Vctrl#1pin@54_polysilicon-1##11 9.538
+C79 Vctrl#1pin@54_polysilicon-1##11 0 0.18fF
+R66 Vctrl#1pin@54_polysilicon-1##11 Vctrl 9.538
+R67 vp#3pin@28_polysilicon-1 vp#3pin@28_polysilicon-1##0 8.857
+C80 vp#3pin@28_polysilicon-1##0 0 0.157fF
+R68 vp#3pin@28_polysilicon-1##0 vp#3pin@28_polysilicon-1##1 8.857
+C81 vp#3pin@28_polysilicon-1##1 0 0.157fF
+R69 vp#3pin@28_polysilicon-1##1 vp#3pin@28_polysilicon-1##2 8.857
+C82 vp#3pin@28_polysilicon-1##2 0 0.157fF
+R70 vp#3pin@28_polysilicon-1##2 vp#3pin@28_polysilicon-1##3 8.857
+C83 vp#3pin@28_polysilicon-1##3 0 0.157fF
+R71 vp#3pin@28_polysilicon-1##3 vp#3pin@28_polysilicon-1##4 8.857
+C84 vp#3pin@28_polysilicon-1##4 0 0.157fF
+R72 vp#3pin@28_polysilicon-1##4 vp#3pin@28_polysilicon-1##5 8.857
+C85 vp#3pin@28_polysilicon-1##5 0 0.157fF
+R73 vp#3pin@28_polysilicon-1##5 vp#4pin@29_polysilicon-1 8.857
+.ENDS ProCK__VCO_core
+
+*** TOP LEVEL CELL: Topchip_test_maxNoise{lay}
+XIO_PAD@0 gnd Ven vdd ProCK__IO_PAD
+XIO_PAD@1 gnd Output vdd ProCK__IO_PAD
+XVCO_core@0 gnd Output Ven vdd ProCK__VCO_core
+** Extracted Parasitic Capacitors ***
+C0 Ven 0 3.019fF
+C1 Ven#1contact@4_metal-1-metal-2 0 17.09fF
+C2 Output#0VCO_core@1_Output 0 6.925fF
+C3 Output 0 2.93fF
+** Extracted Parasitic Resistors ***
+
+* Spice Code nodes in cell cell 'Topchip_test_maxNoise{lay}'
+.noise v(Output) VVen dec 1000 10 100G
+.probe v(onoise)
+VVen Ven GND SINE(0 1 100Meg) AC 1
+.step temp 25 40 1
+VVDD VDD GND DC 5
+.include "E:\Analog_IC_Design\ThucHanh\K22_TKVMTT\Electric_2025\libs\models\C5_models.txt"
+CL Output GND 100f
+.meas noise maxNoise MAX V(onoise)
+.meas noise freq_at_maxNoise WHEN V(onoise)=maxNoise
+.END
